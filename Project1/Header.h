@@ -8,7 +8,8 @@ using namespace std;
 class convertTo {
 
 private:
-	string input, base, decimal;
+	string input, decimal,octal,hexa,bin;
+	int base;
 
 public:
 	///////////////// 
@@ -16,21 +17,21 @@ public:
 	/////////////////
 
 	convertTo();						// Default constructor
-	convertTo(string i, string b);		// Param constructor
+	convertTo(string i, int b);		// Param constructor
 
 	// Accessor , Mutator
-	void changeType(string i, string b);
+	void changeType(string i, int b);
 
-	void getDecimal();
-	void getOctal();
-	void getBinary();
-	void getHexa();
+	void getDecimal() const;
+	void getOctal()   const;
+	void getBinary()  const;
+	void getHexa()    const;
 
 private:
 	void toDecimal();
-	void toOctal();
-	void toBinary();
-	void toHexa();
+	string toOctal(int n);
+	string toBinary(int n);
+	string toHexa(int n);
 
 	char toChar( int n);
 

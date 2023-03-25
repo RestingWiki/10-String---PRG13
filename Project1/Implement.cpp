@@ -37,10 +37,15 @@ void convertTo::toDecimal() {
 
 		while (len >= 0)
 		{
+			if (base == 2 || base == 8)
+				value += (input.at(len) - '0') * temp_B;
+			else if (base == 16)
+				value += toDigit(input.at(len)) * temp_B;
 
-			value += (input.at(len) - '0') * temp_B;
+
 			temp_B *= base;
-				len--;
+		    len--;
+
 		}
 		
 		decimal = to_string(value);
@@ -92,6 +97,23 @@ char convertTo::toChar(int n) {
 	else
 		return (n - 10 + 'A');
 }
+int convertTo::toDigit(char c) {
+	int value = c - '0';
+	if (0 <= value && value == 9)
+		return value;
+	else if (c == 'A')
+		return 10;
+	else if (c == 'B')
+		return 11;
+	else if (c == 'C')
+		return 12;
+	else if (c == 'D')
+		return 13;
+	else if (c == 'E')
+		return 14;
+	else if (c == 'F')
+		return 15;
+}
 
 
 //////////////////////////
@@ -119,5 +141,8 @@ void convertTo::getOctal() const {
 
 void convertTo::getHexa() const {
 	cout << "Hexadcimal: " << hexa << endl;
+}
+void convertTo::getDecimal() const {
+	cout << "Decimal: " << decimal << endl;
 }
 

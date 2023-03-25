@@ -32,7 +32,7 @@ private:
 	string toOctal(int n);
 	string toBinary(int n);
 	string toHexa(int n);
-
+	int toDigit(char c);
 	char toChar( int n);
 
 };

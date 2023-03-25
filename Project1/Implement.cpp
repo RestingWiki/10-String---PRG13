@@ -33,6 +33,12 @@ void convertTo::toBinary() {
 
 void convertTo::toHexa() {
 }
+char convertTo::toChar(int n) {
+	if (0 <= n && n <= 9)
+		return (n + '0');
+	else
+		return (n - 10 + 'A');
+}
 
 
 //////////////////////////

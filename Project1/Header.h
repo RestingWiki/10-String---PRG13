@@ -32,7 +32,6 @@ private:
 	void toBinary();
 	void toHexa();
 
-
 };
 
 #endif // !HEADER_H

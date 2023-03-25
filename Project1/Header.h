@@ -8,7 +8,7 @@ using namespace std;
 class convertTo {
 
 private:
-	string input, base;
+	string input, base, decimal;
 
 public:
 	///////////////// 
@@ -31,6 +31,7 @@ private:
 	void toOctal();
 	void toBinary();
 	void toHexa();
+	void toChar();
 
 };
 
